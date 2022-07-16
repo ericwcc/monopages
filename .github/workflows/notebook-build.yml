@@ -1,0 +1,16 @@
+name: notebook-build
+on: workflow_dispatch
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 16
+      - uses: actions/checkout@v3
+      - uses: actions/checkout@v3
+        with:
+          repository: ericwcc/standardnote-app
+          ref: master
+          path: standardnote-app
+      - run: npm run --prefix standardnote-app build:web
