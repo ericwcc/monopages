@@ -13,5 +13,5 @@ jobs:
           repository: ericwcc/standardnotes-app
           ref: main
           path: standardnotes-app
-      - run: npm install --prefix standardnotes-app
-      - run: npm run --prefix standardnotes-app build:web
+      - run: yarn --cwd standardnotes-app install
+      - run: yarn --cwd standardnotes-app run build:web
